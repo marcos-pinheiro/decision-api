@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package deploy;
+
+option java_multiple_files = true;
+option java_package = "org.marking.infra.resources.grpc";
+option java_outer_classname = "DeploymentProtos";
+
+service Deployment {
+  rpc CreateDeployment (CreateDeploymentRequest) returns (CreateDeploymentResponse) {}
+}
+
+message CreateDeploymentRequest {
+  string version = 1;
+  string ruleGroupName = 2;
+  string deploymentName = 3;
+  string strategy = 4;
+  string repositoryURL = 5;
+}
+
+message CreateDeploymentResponse {
+  string previousVersion = 1;
+  string status = 2;
+}

@@ -1,0 +1,7 @@
+micronaut:
+  application:
+    name: decision-engine
+
+grpc:
+  server:
+    port: 8080
